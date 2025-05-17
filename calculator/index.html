@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <title>calculator</title>
+        <link rel="stylesheet" href="style.css">
+    
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="calculator">
+                <form>
+                    <div class="display">
+                        <div class="title">Calculator</div>
+                        <input type="text" id="display">  
+                    </div>
+                
+                    <div>
+                        
+                        <input type="button" class="operator" value="AC" onclick="clearDisplay()">
+                        <input type="button" class="operator" value="DEL" onclick="deleteChar()"> 
+                        <input type="button" value="(" onclick="toDisplay('(')" class="operator">
+                        <input type="button" value=")" onclick="toDisplay(')')" class="operator">
+                        <input type="button" class="operator" value="√" onclick="toDisplay('√')"> 
+                        
+                    </div>
+                    <div>
+                        <input type="button" value="7" onclick="toDisplay('7')">
+                        <input type="button" value="8" onclick="toDisplay('8')"> 
+                        <input type="button" value="9" onclick="toDisplay('9')"> 
+                        <input type="button" value="*" onclick="toDisplay('*')" class="operator">  
+                        <input type="button" class="operator"value="/" onclick="toDisplay('/')">  
+                    </div>                                          
+                    <div>
+                        <input type="button" value="4" onclick="toDisplay('4')">
+                        <input type="button" value="5" onclick="toDisplay('5')"> 
+                        <input type="button" value="6" onclick="toDisplay('6')"> 
+                        <input type="button" value="-" onclick="toDisplay('-')" class="operator">  
+                        <input type="button" class="operator"value="%" onclick="toDisplay('%')">  
+                    </div>
+                    <div>
+                        <input type="button" value="1" onclick="toDisplay('1')">
+                        <input type="button" value="2" onclick="toDisplay('2')"> 
+                        <input type="button" value="3" onclick="toDisplay('3')"> 
+                        <input type="button" value="+" onclick="toDisplay('+')" class="operator"> 
+                        <input type="button" class="operator"value="^" onclick="toDisplay('^')">   
+                    </div>
+                    <div>
+                        <input type="button" value="00" onclick="toDisplay('00')">
+                        <input type="button" value="0" onclick="toDisplay('0')"> 
+                        <input type="button" class="operator" value="." onclick="toDisplay('.')"> 
+                        <input type="button" value="=" class="equal operator" onclick="calculate()"> 
+                      
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
