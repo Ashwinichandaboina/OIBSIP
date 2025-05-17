@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="to-do.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>To-Do List</h1>
+    <form id="taskForm">
+      <label for="task">Task:</label>
+      <input type="text" id="task" name="task" required />
+      
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" required></textarea>
+      
+      <button type="submit">Add Task</button>
+    </form>
+
+    <table id="taskTable">
+      <thead>
+        <tr>
+          <th>Task</th>
+          <th>Description</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script>
+    const form = document.getElementById('taskForm');
+    const tableBody = document.querySelector('#taskTable tbody');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const task = document.getElementById('task').value.trim();
+      const description = document.getElementById('description').value.trim();
+
+      if (!task || !description) return;
+
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${task}</td>
+        <td>${description}</td>
+        <td><button class="delete-btn">Delete</button></td>
+      `;
+      tableBody.appendChild(row);
+
+      form.reset();
+    });
+
+    tableBody.addEventListener('click', function (e) {
+      if (e.target.classList.contains('delete-btn')) {
+        e.target.closest('tr').remove();
+      }
+    });
+  </script>
+</body>
+</html>
